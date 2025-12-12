@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>15d1073c-96b5-47dd-b073-186eed743d8c</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>_11.py</StartupFile>
+    <StartupFile>12.12\arvud_loendis_parandatud.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,7 +21,11 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="_11.py" />
+    <Compile Include="12.12\programm.py" />
+    <Compile Include="12.12\arvud_loendis_parandatud.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="12.12\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
