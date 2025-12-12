@@ -1,76 +1,71 @@
 from random import *
 
 def vahetus(a, b):
-    # vahetab kahe muutuja väärtused
-    return b, a
+    return b, a  # parandatud: nÃ¼Ã¼d tagastab Ãµigesti b,a
+
 
 def generaator(n, loend, a, b):
-    # genereerib n juhuslikku täisarvu
-    for i in range(n):
-        loend.append(randint(a, b))
+    for i in range(n):  # parandatud: range n â†’ range(n)
+        loend.append(randint(a, b))  # parandatud: loend.append, mitte loend(append)
+
 
 def jagamine(loend, p, n, nol):
-    # jagab arvud positiivseteks, negatiivseteks ja nullideks
     for el in loend:
         if el > 0:
             p.append(el)
-        elif el < 0:
+        elif el < 0:  # parandatud: vigane "elif::" parandatud Ãµigeks
             n.append(el)
         else:
             nol.append(el)
 
+
 def keskmine(loend):
-    # leiab loendi keskmise väärtuse
     if len(loend) == 0:
-        return 0
-    return round(sum(loend) / len(loend), 2)
+        return 0  # parandatud: tÃ¼hja loendi keskmine = 0
+    return round(sum(loend) / len(loend), 2)  # parandatud: lihtsam ja korrektne arvutus
+
 
 def lisamine(loend, el):
-    # lisab elemendi loendisse ja sorteerib selle
-    loend.append(el)
-    loend.sort()
+    loend.append(el)  # parandatud: loend.append
+    loend.sort()      # parandatud: loend.sort(), mitte loend(sort())
 
 
-# loendite loomine
-s = []
+# loendid
+s = []     # muudetud: algsed nimed parandatud
 pos = []
 neg = []
 null = []
 
 
-# põhifunktsioon
 def arvud_loendis():
     print("Andmed:")
-    
-    n = abs(int(input("Mitu täisarvu genereerime loendisse? => ")))
+
+    n = abs(int(input("Mitu tÃ¤isarvu genereerime loendisse? => ")))  # parandatud: abs lisatud
     mini = int(input("Sisesta vahemiku minimaalne arv => "))
     maxi = int(input("Sisesta vahemiku maksimaalne arv => "))
 
-    # kui kasutaja ajas min ja max segamini
-    if mini > maxi:
-        mini, maxi = vahetus(mini, maxi)
+    if mini > maxi:  # parandatud: >= asemel >
+        mini, maxi = vahetus(mini, maxi)  # parandatud: Ãµiged argumendid
 
-    generaator(n, s, mini, maxi)
-    
+    generaator(n, s, mini, maxi)  # parandatud: vale funktsiooni nimi
+
     print("\nTulemused:")
     print(f"Saadud loend vahemikus {mini} kuni {maxi} :", s)
 
-    s.sort()
-    print("Sorteeritud loend:", s)
+    s.sort()  # parandatud: sort(s) â†’ s.sort()
+    print("Sorteeritud loend:", s)  # parandatud: koma lisatud
 
-    jagamine(s, pos, neg, null)
+    jagamine(s, pos, neg, null)  # parandatud: neljas nimekiri lisatud
 
     print("Positiivsed arvud:", pos)
     print("Negatiivsed arvud:", neg)
     print("Nullid:", null)
 
-    # positiivsete keskmine
-    kesk_pos = keskmine(pos)
+    kesk_pos = keskmine(pos)  # parandatud: eemaldatud vigane lisaparameeter
     print("Positiivsete keskmine:", kesk_pos)
     lisamine(s, kesk_pos)
 
-    # negatiivsete keskmine
-    kesk_neg = keskmine(neg)
+    kesk_neg = keskmine(neg)  # parandatud: sama viga parandatud
     print("Negatiivsete keskmine:", kesk_neg)
     lisamine(s, kesk_neg)
 
@@ -78,6 +73,6 @@ def arvud_loendis():
     print(s)
 
 
-# programmi käivitamine
-arvud_loendis()
+arvud_loendis()  # parandatud: funktsioonile lisatud sulud
+
 
